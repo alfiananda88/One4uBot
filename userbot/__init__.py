@@ -169,6 +169,9 @@ G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
+# JustWatch Country
+WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", None)
+
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
 if not os.path.exists('bin'):
