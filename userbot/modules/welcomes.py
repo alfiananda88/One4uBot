@@ -28,6 +28,30 @@ async def welcome_to_chat(event):
             chat = await event.get_chat()
             me = await event.client.get_me()
 
+
+            # Current time in UTC
+            now_utc = datetime.now(timezone('UTC'))
+
+            # Convert to Jakarta time zone
+            jakarta_timezone = now_utc.astimezone(timezone('Asia/Jakarta'))
+            if jakarta_timezone.hour < 4:
+                time = "Selamat malam 🌒"
+            elif 4 <= jakarta_timezone.hour < 6:
+                time = "Selamat pagi 🌄"
+            elif 6 <= jakarta_timezone.hour < 11:
+                time = "Selamat pagi 🌄"
+            elif 11 <= jakarta_timezone.hour < 13:
+                time = "Selamat siang 🌤️"
+            elif 13 <= jakarta_timezone.hour <15:
+                time = "Selamat siang 🌤️"
+            elif 15 <= jakarta_timezone.hour < 18:
+                time = "Selamat sore 🌅"
+            elif 17 <= jakarta_timezone.hour < 19:
+                time = "Selamat malam 🌙"
+            else:
+                time = "Selamat malam 🌕"
+
+
             title = chat.title if chat.title else "this chat"
             participants = await event.client.get_participants(chat)
             count = len(participants)
