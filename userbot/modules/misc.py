@@ -106,7 +106,12 @@ async def reedme(e):
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
         "\n[Setup Guide - From MiHub with Pict](https://www.mihub.my.id/2020/05/jadiuserbot.html)"
         "\n[Setup Guide - In Indonesian Language](https://telegra.ph/UserIndoBot-05-21-3)"
+<<<<<<< HEAD
+        "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
+        "\n[Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)")
+=======
         "\n[Instant Setup - Generate String Session](https://One4uBot.moveangel.repl.run)")
+>>>>>>> upstream/sql-extended
     
 
 # Copyright (c) Gegham Zakaryan | 2019
@@ -128,7 +133,7 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "[Click here](https://github.com/MoveAngel/One4uBot) to open One4uBot's GitHub page."
+        "[Click Here](https://github.com/MoveAngel/One4uBot) to see ProjectBish Official Repo.\n[Click Here](https://github.com/RonalAlfianto/One4uBot) to see My Forked Repo"
     )
 
 
