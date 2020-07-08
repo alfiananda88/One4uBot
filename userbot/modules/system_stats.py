@@ -11,7 +11,7 @@ from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import version
-from userbot import bot, CMD_HELP, ALIVE_NAME, UPSTREAM_REPO_BRANCH, ALIVE_LOGO
+from userbot import bot, CMD_HELP, ALIVE_NAME, ALIVE_USERNAME, UPSTREAM_REPO_BRANCH, ALIVE_LOGO
 from userbot.events import register
 
 # ================= CONSTANT =================
