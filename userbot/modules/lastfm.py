@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import User as Userbot
 from telethon.errors.rpcerrorlist import FloodWaitError
 
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, BIO_PREFIX, lastfm, LASTFM_USERNAME, bot
+from userbot import CMD_HELP, ALIVE_NAME, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, BIO_PREFIX, lastfm, LASTFM_USERNAME, bot
 from userbot.events import register
 
 # =================== CONSTANT ===================
@@ -29,6 +29,7 @@ LFM_LOG_ENABLED = "```last.fm logging to bot log is now enabled.```"
 LFM_LOG_DISABLED = "```last.fm logging to bot log is now disabled.```"
 LFM_LOG_ERR = "```No option specified.```"
 ERROR_MSG = "```last.fm module halted, got an unexpected error.```"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 ARTIST = 0
 SONG = 0
@@ -64,14 +65,14 @@ async def last_fm(lastFM):
         rectrack = sub("^", "https://open.spotify.com/search/",
                        rectrack)
         if image:
-            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[‎]({image})[{DEFAULTUSER}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
             preview = True
         else:
-            output = f"[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[{DEFAULTUSER}]({username}) __rectrack listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
     else:
         recent = User(LASTFM_USERNAME, lastfm).get_recent_tracks(limit=3)
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
-        output = f"[{LASTFM_USERNAME}]({username}) __was last listening to:__\n\n"
+        output = f"[{DEFAULTUSER}]({username}) __was last listening to:__\n\n"
         for i, track in enumerate(recent):
             print(i)
             printable = await artist_and_song(track)

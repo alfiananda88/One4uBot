@@ -18,6 +18,7 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
+MODULESTR = 0
 
 @register(outgoing=True, pattern="^.sysd$")
 async def sysdetails(sysd):
@@ -138,7 +139,8 @@ async def amireallyalive(alive):
              f"┣[ ⚙️ `Telethon  :` v{version.__version__}\n"
              f"┣[ 👁‍🗨 `Username  :` `@guillotinecut`\n"
              f"┣[ 🎮 `Running on:` {UPSTREAM_REPO_BRANCH}\n"
-             f"┗━━━━━━━━━━━━━━━━━━━━━━━━\n")
+             f"┗━━━━━━━━━━━━━━━━━━━━━━━━\n"
+             f"`All modules loaded with ({MODULESTR}) errors`")
     await bot.send_file(alive.chat_id, logo, caption=output)
     await alive.delete()
 
