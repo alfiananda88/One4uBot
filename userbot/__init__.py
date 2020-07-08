@@ -130,6 +130,9 @@ ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO",
     "https://telegra.ph/file/a904be2cb0ebe75a12cb6.jpg")
 
+# Default .alive username
+ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
+
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
