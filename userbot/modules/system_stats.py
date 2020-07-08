@@ -134,11 +134,11 @@ async def amireallyalive(alive):
     logo = ALIVE_LOGO
     output = (f"`My Detail Ubot `\n"
              f"┏━━━━━━━━━━━━━━━━━━━━━━━━\n"
-             f"┣[ 👤 `User      :` {DEFAULTUSER}\n"
-             f"┣[ 🐍 `Python    :` v{python_version()}\n"
-             f"┣[ ⚙️ `Telethon  :` v{version.__version__}\n"
-             f"┣[ 👁‍🗨 `Username  :` `@guillotinecut`\n"
-             f"┣[ 🎮 `Running on:` {UPSTREAM_REPO_BRANCH}\n"
+             f"┣[ 👤 `User       :` {DEFAULTUSER}\n"
+             f"┣[ 🐍 `Python     :` v{python_version()}\n"
+             f"┣[ ⚙️ `Telethon   :` v{version.__version__}\n"
+             f"┣[ 👁‍🗨 `Username   :` {ALIVE_USERNAME}\n"
+             f"┣[ 🎮 `Running on :` {UPSTREAM_REPO_BRANCH}\n"
              f"┗━━━━━━━━━━━━━━━━━━━━━━━━\n"
              f"`All modules loaded with ({MODULESTR}) errors`")
     await bot.send_file(alive.chat_id, logo, caption=output)
