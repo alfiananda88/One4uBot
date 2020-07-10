@@ -12,7 +12,7 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r'^.anime(:? |$)(.*)?')
+@register(outgoing=True, pattern=r'^.anime2(:? |$)(.*)?')
 async def anime(anm):
     await anm.edit("`Sending information...`")
     level = anm.pattern_match.group()
@@ -60,7 +60,7 @@ async def anime(anm):
     await anm.delete()
 
 CMD_HELP.update({
-        "anime": 
-        ">`.anime`"
+        "anime2": 
+        ">`.anime2`"
         "\nUsage: Reply a image/gif/video to check what anime it is from."
     })
