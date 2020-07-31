@@ -15,19 +15,19 @@ from userbot.events import register
 @register(outgoing=True, pattern="^.sg(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
-        return 
+        return
     if not steal.reply_to_msg_id:
        await steal.edit("```Reply to any user message.```")
        return
-    reply_message = await steal.get_reply_message() 
+    reply_message = await steal.get_reply_message()
     if not reply_message.text:
        await steal.edit("```reply to text message```")
        return
     chat = "@SangMataInfo_bot"
     sender = reply_message.sender
-    if reply_message.sender.bot:
-       await steal.edit("```Reply to actual users message.```")
-       return
+    if sender.bot:
+        await steal.edit("```Reply to actual users message.```")
+        return
     await steal.edit("```Sit tight while I steal some data from NASA```")
     async with bot.conversation(chat) as conv:
           try:     
@@ -48,19 +48,19 @@ async def lastname(steal):
 @register(outgoing=True, pattern="^.fakemail(?: |$)(.*)")
 async def pembohong(fake):
     if fake.fwd_from:
-        return 
+        return
     if not fake.reply_to_msg_id:
        await fake.edit("```Reply to any user message.```")
        return
-    reply_message = await fake.get_reply_message() 
+    reply_message = await fake.get_reply_message()
     if not reply_message.text:
        await fake.edit("```reply to text message```")
        return
     chat = "@fakemailbot"
     sender = reply_message.sender
-    if reply_message.sender.bot:
-       await fake.edit("```Reply to actual users message.```")
-       return
+    if sender.bot:
+        await fake.edit("```Reply to actual users message.```")
+        return
     await fake.edit("```Sit tight while I sending some data from Microsoft```")
     async with bot.conversation(chat) as conv:
           try:     
