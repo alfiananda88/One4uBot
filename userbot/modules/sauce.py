@@ -12,19 +12,19 @@ from userbot.events import register
 @register(outgoing=True, pattern=r'^.sauce(:? |$)(.*)?')
 async def _(event):
     if event.fwd_from:
-        return 
+        return
     if not event.reply_to_msg_id:
        await event.edit("`Reply to a pic, GIF, a sticker, or an image file with .sauce`")
        return
-    reply_message = await event.get_reply_message() 
+    reply_message = await event.get_reply_message()
     if not reply_message.media:
        await event.edit("`Reply to a pic, GIF, a sticker, or an image file`")
        return
     chat = "@SauceNAObot"
     sender = reply_message.sender
-    if reply_message.sender.bot:
-       await event.edit("```Reply to actual users message.```")
-       return
+    if sender.bot:
+        await event.edit("```Reply to actual users message.```")
+        return
     await event.edit("```Processing...```")
     async with bot.conversation(chat) as conv:
           await event.edit("```Pouring some sauce on it...```")
